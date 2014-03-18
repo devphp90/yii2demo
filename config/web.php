@@ -4,6 +4,11 @@ $config = [
 	'id' => 'basic',
 	'basePath' => dirname(__DIR__),
 	'extensions' => require(__DIR__ . '/../vendor/yiisoft/extensions.php'),
+    'modules' => [
+        'gii' => [
+            'class' => 'yii\gii\Module',
+        ],
+    ],
 	'components' => [
 		'cache' => [
 			'class' => 'yii\caching\FileCache',
@@ -26,6 +31,13 @@ $config = [
 				],
 			],
 		],
+        'db' => [
+            'class' => 'yii\db\Connection',
+            'dsn' => 'mysql:host=localhost;dbname=yii2demo',
+            'username' => 'root',
+            'password' => '',
+            'charset' => 'utf8',
+        ],
 	],
 	'params' => $params,
 ];
